@@ -1,0 +1,38 @@
+.navItem {
+    position: relative;
+    text-transform: capitalize;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0 1rem;
+    transition: all 0.3s ease-in-out;
+ 
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -8;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2px;
+        background: black;
+        width: 0;
+        border-radius: 100px;
+        transition: all 0.3s ease-in-out;
+    }
+    &:hover {
+        color: black;
+       
+        &::after {
+            width: 100%;
+        }
+    }
+
+    &.active {
+        color: black;
+     
+
+        &::after {
+            width: 100%;
+        }
+    }
+}
