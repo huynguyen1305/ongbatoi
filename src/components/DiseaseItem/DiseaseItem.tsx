@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 
 function DiseaseItem(props: any) {
-  console.log(props);
   return (
     <div>
       <div className="flex flex-col m-4">

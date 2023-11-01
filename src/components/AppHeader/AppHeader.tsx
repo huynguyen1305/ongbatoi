@@ -39,8 +39,8 @@ export default function AppHeader() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setShowNav(window.scrollY > 200);
-      window.addEventListener('scroll', () => setShowNav(window.scrollY > 200));
+      setShowNav(window.scrollY > 123);
+      window.addEventListener('scroll', () => setShowNav(window.scrollY > 123));
     }
   }, []);
   return (

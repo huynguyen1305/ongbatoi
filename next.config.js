@@ -20,6 +20,10 @@ module.exports = withBundleAnalyzer({
         protocol: 'https',
         hostname: 'picsum.photos',
       },
+      {
+        protocol: 'https',
+        hostname: 'ong-ba-toi.ghost.io',
+      },
     ],
   },
 });

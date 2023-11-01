@@ -1,11 +1,13 @@
 import Image from 'next/image';
-
+import { Suspense } from 'react';
 import { Divider } from '@mantine/core';
 
 import { IconCircleArrowRight } from '@tabler/icons-react';
 import DiseaseItem from '@/src/components/DiseaseItem/DiseaseItem';
+import CardVertical from '@/src/components/CardVertical/CardVertical';
 
 import homeWelcomeImage from '@/src/assets/images/home-welcome.png';
+import { axiosClient } from '../configs/axiosClient';
 
 export const metadata = {
   title: 'Trang Chủ | Ông Bà Tôi',
@@ -44,7 +46,14 @@ const diseaseList = [
   },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const res: any = await axiosClient.get('/posts', {
+    params: {
+      limit: 10,
+    },
+  });
+  const { posts } = res;
+  // console.log(posts);
   return (
     <>
       <section>
@@ -57,6 +66,40 @@ export default function HomePage() {
               objectFit: 'cover',
             }}
           />
+        </div>
+      </section>
+
+      <section>
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex justify-between items-center">
+            <h3
+              style={{
+                fontSize: '1.5rem',
+                fontWeight: '500',
+                textTransform: 'uppercase',
+              }}
+            >
+              bài viết nổi bật
+            </h3>
+            <div
+              style={{
+                fontSize: '1rem',
+                fontWeight: '500',
+                textTransform: 'capitalize',
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              <IconCircleArrowRight style={{ marginRight: '0.5rem' }} />
+              đọc thêm
+            </div>
+          </div>
+          <Divider my="xs" />
+          <div className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 gap-8">
+            <Suspense fallback={<div>Loading...</div>}>
+              {posts && posts.map((post: any) => <CardVertical key={post.id} data={post} />)}
+            </Suspense>
+          </div>
         </div>
       </section>
       <section>
@@ -101,51 +144,6 @@ export default function HomePage() {
                 image={disease.image}
               />
             ))}
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex justify-between items-center">
-            <h3
-              style={{
-                fontSize: '1.5rem',
-                fontWeight: '500',
-                textTransform: 'uppercase',
-              }}
-            >
-              Bai viet noi bat
-            </h3>
-            <div
-              style={{
-                fontSize: '1rem',
-                fontWeight: '500',
-                textTransform: 'capitalize',
-                display: 'flex',
-                alignItems: 'center',
-              }}
-            >
-              <IconCircleArrowRight style={{ marginRight: '0.5rem' }} />
-              đọc thêm
-            </div>
-          </div>
-          <Divider my="xs" />
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-            }}
-          >
-            {/* {diseaseList.map((disease) => (
-              <DiseaseItem
-                key={disease.id}
-                name={disease.name}
-                description={disease.description}
-                image={disease.image}
-              />
-            ))} */}
           </div>
         </div>
       </section>
