@@ -10,13 +10,13 @@ function DiseaseItem(props: any) {
           alt={props.name}
           width={200}
           height={200}
-          style={{ borderRadius: '50%', border: '1px solid black', objectFit: 'cover' }}
+          style={{ borderRadius: '50%', objectFit: 'cover' }}
         />
 
         <div
           style={{
-            textAlign: 'left',
-            marginLeft: '70px',
+            textAlign: 'center',
+
             fontSize: '1.25rem',
             fontWeight: '500',
             marginTop: '1rem',

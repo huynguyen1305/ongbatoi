@@ -1,6 +1,6 @@
 import { Divider } from '@mantine/core';
 
-import { IconCircleArrowRight } from '@tabler/icons-react';
+// import { IconCircleArrowRight } from '@tabler/icons-react';
 import DiseaseItem from '@/src/components/DiseaseItem/DiseaseItem';
 
 import { axiosClient } from '../configs/axiosClient';
@@ -15,27 +15,27 @@ export const metadata = {
 const diseaseList = [
   {
     id: 1,
-    name: 'Benh 1',
-    description: 'aaaa',
-    image: 'https://picsum.photos/200',
-  },
-  {
-    id: 3,
-    name: 'Benh 2',
-    description: 'Benh 2',
-    image: 'https://picsum.photos/200',
+    name: 'Bệnh lý theo tuổi',
+    description: 'Bệnh lý theo tuổi',
+    image: 'https://picsum.photos/id/870/200',
   },
   {
     id: 2,
-    name: 'Benh 3',
-    description: 'Benh 3',
-    image: 'https://picsum.photos/200',
+    name: 'Thuốc',
+    description: 'Thuốc',
+    image: 'https://picsum.photos/id/827/200',
+  },
+  {
+    id: 3,
+    name: 'Vaccine',
+    description: 'Vaccine',
+    image: 'https://picsum.photos/id/7/200',
   },
   {
     id: 4,
-    name: 'Benh 4',
-    description: 'Benh 4',
-    image: 'https://picsum.photos/200',
+    name: 'Vấn Đề Khác',
+    description: 'Vấn Đề Khác',
+    image: 'https://picsum.photos/id/37/200',
   },
 ];
 
@@ -68,7 +68,7 @@ export default async function HomePage() {
             >
               sức khỏe a - z
             </h3>
-            <div
+            {/* <div
               style={{
                 fontSize: '1rem',
                 fontWeight: '500',
@@ -79,7 +79,7 @@ export default async function HomePage() {
             >
               <IconCircleArrowRight style={{ marginRight: '0.5rem' }} />
               đọc thêm
-            </div>
+            </div> */}
           </div>
           <Divider my="xs" />
           <div

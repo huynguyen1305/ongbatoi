@@ -28,6 +28,7 @@ async function PostPageDetail({ params }: any) {
               textAlign: 'center',
               fontWeight: '600',
               textTransform: 'uppercase',
+              fontFamily: 'ui-sans-serif',
             }}
             className="text-2xl md:text-4xl"
           >

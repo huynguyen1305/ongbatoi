@@ -133,8 +133,6 @@ h6 {
 }
 
 .swiper-button-prev {
-
-
   &::after {
     content: "◄" !important;
     color: white !important;
@@ -143,12 +141,11 @@ h6 {
 }
 
 .swiper-button-next {
-
   &::after {
     content: "►" !important;
     color: white !important;
     font-size: 2rem !important;
-
+    // font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 }
 

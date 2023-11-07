@@ -1,5 +1,6 @@
 .full-content{
-    
+    line-height: 1.55;
+    font-size: 1.15rem;
     & img {
         margin: 1.5rem auto;
         border-radius: 4px;
@@ -7,7 +8,7 @@
     }
     & h1, h2, h3, h4, h5, h6 {
         margin: 1rem 0 0.5rem 0;
-        font-size: 1.25rem;
+        font-size: 1.35rem;
     }
     & p {
         text-align: justify;
