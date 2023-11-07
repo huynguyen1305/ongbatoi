@@ -3,41 +3,42 @@ import Link from 'next/link';
 import React from 'react';
 
 function CardVertical({ data }: any) {
-  const date = new Date(data.created_at);
+  // const date = new Date(data.created_at);
   return (
-    <div
-      style={{
-        display: 'flex',
-        borderRadius: '1rem',
-        padding: '1rem',
-        border: '1px solid rgba(0,0,0,0.1)',
-      }}
-      className="shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]"
-    >
-      <img
-        src={data.feature_image}
-        alt=""
-        style={{ borderRadius: '0.5rem', objectFit: 'cover' }}
-        className="w-[30%] h-[100%]"
-      />
-
+    <Link href={`/bai-viet/${data.slug}`}>
       <div
         style={{
-          padding: '0 1rem',
           display: 'flex',
-          justifyContent: 'space-between',
-          flexDirection: 'column',
+          borderRadius: '1rem',
+
+          // border: '1px solid rgba(0,0,0,0.1)',
         }}
+        // className="shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]"
       >
-        <Link href={`/bai-viet/${data.slug}`}>
-          <h3 style={{ fontSize: '1.25rem', fontWeight: '500', lineHeight: '1.25', flex: '1' }}>
-            {data.title}
-          </h3>
-        </Link>
+        <img
+          src={data.feature_image}
+          alt=""
+          style={{ objectFit: 'cover' }}
+          className="w-[30%] h-[100%]"
+        />
 
-        <p className="line-clamp-3 mt-2">{data.excerpt}</p>
+        <div
+          style={{
+            padding: '0 1rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            flexDirection: 'column',
+          }}
+        >
+          <Link href={`/bai-viet/${data.slug}`}>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: '500', lineHeight: '1.25' }}>
+              {data.title}
+            </h3>
+          </Link>
 
-        <br />
+          <p className="line-clamp-3 mt-2">{data.excerpt}</p>
+
+          {/* <br />
         <div>
           <small style={{ fontStyle: 'italic' }}>{date.toLocaleDateString('vi')}</small>
           <div className="line-clamp-1">
@@ -56,9 +57,10 @@ function CardVertical({ data }: any) {
               </span>
             ))}
           </div>
+        </div> */}
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

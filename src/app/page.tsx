@@ -1,13 +1,12 @@
-import Image from 'next/image';
-import { Suspense } from 'react';
 import { Divider } from '@mantine/core';
 
 import { IconCircleArrowRight } from '@tabler/icons-react';
 import DiseaseItem from '@/src/components/DiseaseItem/DiseaseItem';
-import CardVertical from '@/src/components/CardVertical/CardVertical';
 
-import homeWelcomeImage from '@/src/assets/images/home-welcome.png';
 import { axiosClient } from '../configs/axiosClient';
+import SectionWelcome from '../modules/HomePage/SectionWelcome';
+import SectionFeature from '../modules/HomePage/SectionFeature';
+import SectionNewPost from '../modules/HomePage/SectionNewPost';
 
 export const metadata = {
   title: 'Trang Chủ | Ông Bà Tôi',
@@ -38,12 +37,6 @@ const diseaseList = [
     description: 'Benh 4',
     image: 'https://picsum.photos/200',
   },
-  {
-    id: 5,
-    name: 'Benh 5',
-    description: 'Benh 5',
-    image: 'https://picsum.photos/200',
-  },
 ];
 
 export default async function HomePage() {
@@ -57,50 +50,11 @@ export default async function HomePage() {
   return (
     <>
       <section>
-        <div className="w-full h-[100vh]" style={{ position: 'relative' }}>
-          <Image
-            src={homeWelcomeImage}
-            alt="home-welcome"
-            fill
-            style={{
-              objectFit: 'cover',
-            }}
-          />
-        </div>
+        <SectionWelcome />
       </section>
 
       <section>
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex justify-between items-center">
-            <h3
-              style={{
-                fontSize: '1.5rem',
-                fontWeight: '500',
-                textTransform: 'uppercase',
-              }}
-            >
-              bài viết nổi bật
-            </h3>
-            <div
-              style={{
-                fontSize: '1rem',
-                fontWeight: '500',
-                textTransform: 'capitalize',
-                display: 'flex',
-                alignItems: 'center',
-              }}
-            >
-              <IconCircleArrowRight style={{ marginRight: '0.5rem' }} />
-              đọc thêm
-            </div>
-          </div>
-          <Divider my="xs" />
-          <div className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 gap-8">
-            <Suspense fallback={<div>Loading...</div>}>
-              {posts && posts.map((post: any) => <CardVertical key={post.id} data={post} />)}
-            </Suspense>
-          </div>
-        </div>
+        <SectionFeature posts={posts} />
       </section>
       <section>
         <div className="container mx-auto px-4 py-8">
@@ -146,6 +100,9 @@ export default async function HomePage() {
             ))}
           </div>
         </div>
+      </section>
+      <section>
+        <SectionNewPost posts={posts} />
       </section>
     </>
   );

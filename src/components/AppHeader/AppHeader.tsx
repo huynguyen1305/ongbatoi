@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 import { clsx } from 'clsx';
@@ -11,7 +11,7 @@ import logo from '@/src/assets/images/logo.png';
 import styles from './AppHeader.module.scss';
 
 export default function AppHeader() {
-  const [showNav, setShowNav] = useState(false);
+  // const [showNav, setShowNav] = useState(false);
   const pathname = usePathname();
 
   const navbar = [
@@ -37,19 +37,19 @@ export default function AppHeader() {
     },
   ];
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setShowNav(window.scrollY > 123);
-      window.addEventListener('scroll', () => setShowNav(window.scrollY > 123));
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     setShowNav(window.scrollY > 123);
+  //     window.addEventListener('scroll', () => setShowNav(window.scrollY > 123));
+  //   }
+  // }, []);
   return (
     <>
       <div
         className="w-full h-20 fixed top-0 z-10"
         style={{
-          backgroundColor: showNav ? '#FFF' : 'transparent',
-          boxShadow: showNav ? '0 4px 8px 0 rgba(0, 0, 0, 0.1)' : 'none',
+          backgroundColor: '#FFF',
+          boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.1)',
           transition: 'all 0.3s ease-in-out',
         }}
       >

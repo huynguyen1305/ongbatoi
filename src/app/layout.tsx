@@ -7,6 +7,11 @@ import { theme } from '../configs/theme';
 import AppHeader from '../components/AppHeader/AppHeader';
 import AppFooter from '@/src/components/AppFooter/AppFooter';
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 export const metadata = {
   title: 'Ông Bà Tôi',
   description: 'Nursing home for elderly people',
@@ -30,7 +35,7 @@ export default function RootLayout({ children }: { children: any }) {
         <MantineProvider theme={theme}>
           <div className="appLayoutWrapper">
             <AppHeader />
-            <div className="flex-auto">{children}</div>
+            <div className="mt-[80px] flex-auto">{children}</div>
             <AppFooter />
           </div>
         </MantineProvider>

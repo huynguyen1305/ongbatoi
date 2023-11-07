@@ -1,12 +1,15 @@
 .full-content{
-    font-size: 20px;
+    
     & img {
         margin: 1.5rem auto;
         border-radius: 4px;
         width: 100%;
     }
     & h1, h2, h3, h4, h5, h6 {
-        margin: 2rem 0 0.8rem 0;
-        font-size: 2rem;
+        margin: 1rem 0 0.5rem 0;
+        font-size: 1.25rem;
+    }
+    & p {
+        text-align: justify;
     }
 }

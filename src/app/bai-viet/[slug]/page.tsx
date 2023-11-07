@@ -12,7 +12,7 @@ async function PostPageDetail({ params }: any) {
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-        <div
+        {/* <div
           style={{
             backgroundImage: `url(${currentPost.feature_image})`,
             backgroundSize: 'cover',
@@ -21,7 +21,7 @@ async function PostPageDetail({ params }: any) {
             width: '100%',
             height: '50vh',
           }}
-        />
+        /> */}
         <div className="container mx-auto my-8 px-4">
           <h2
             style={{
@@ -29,15 +29,16 @@ async function PostPageDetail({ params }: any) {
               fontWeight: '600',
               textTransform: 'uppercase',
             }}
-            className="text-4xl md:text-6xl"
+            className="text-2xl md:text-4xl"
           >
             {currentPost.title}
           </h2>
           <br />
-          <br />
+
           <div
             className={clsx({
               [styles['full-content']]: true,
+              'lg:mx-10': true,
               'prose lg:prose-xl': true,
             })}
             dangerouslySetInnerHTML={{ __html: currentPost.html }}
