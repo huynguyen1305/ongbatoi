@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 function DiseaseItem(props: any) {
   return (
-    <div>
+    <div className="mx-auto">
       <div className="flex flex-col m-4">
         <Image
           src={props.image}

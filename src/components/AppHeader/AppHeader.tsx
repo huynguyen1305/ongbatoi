@@ -17,23 +17,23 @@ export default function AppHeader() {
   const navbar = [
     {
       name: 'Sức khỏe a-z',
-      href: 'suc-khoe-a-z',
+      href: '/suc-khoe-a-z',
     },
     {
       name: 'chăm sóc cuộc sống',
-      href: 'cham-soc-cuoc-song',
+      href: '/cham-soc-cuoc-song',
     },
     {
       name: 'tin mới',
-      href: 'tin-moi',
+      href: '/tin-moi',
     },
     {
       name: 'Về chúng tôi',
-      href: 've-chung-toi',
+      href: '/ve-chung-toi',
     },
     {
       name: 'liên hệ',
-      href: 'lien-he',
+      href: '/lien-he',
     },
   ];
 

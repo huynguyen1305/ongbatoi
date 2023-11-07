@@ -37,7 +37,7 @@ function FeatureItem({ item }: any) {
           }}
           className="m-6"
         >
-          <Link href={`/bai-viet/${item.slug}`}>
+          <Link href={`/tin-moi/${item.slug}`}>
             <h3 style={{ fontSize: '1.5rem', fontWeight: '500', lineHeight: '1.25' }}>
               {item.title}
             </h3>

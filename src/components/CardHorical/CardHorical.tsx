@@ -2,29 +2,22 @@
 import Link from 'next/link';
 import React from 'react';
 
-function CardVertical({ data }: any) {
+function CardHorical({ data }: any) {
   // const date = new Date(data.created_at);
   return (
     <Link href={`/tin-moi/${data.slug}`}>
-      <div
-        style={{
-          display: 'flex',
-          borderRadius: '1rem',
-
-          // border: '1px solid rgba(0,0,0,0.1)',
-        }}
-        // className="shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]"
-      >
+      <div>
         <img
           src={data.feature_image}
           alt=""
           style={{ objectFit: 'cover' }}
-          className="w-[30%] h-[100%]"
+          className="w-[100%] h-[100%]"
         />
 
         <div
           style={{
-            padding: '0 1rem',
+            // padding: '1rem',
+            marginTop: '1rem',
             display: 'flex',
             justifyContent: 'space-between',
             flexDirection: 'column',
@@ -36,7 +29,7 @@ function CardVertical({ data }: any) {
             </h3>
           </Link>
 
-          <p className="line-clamp-3 mt-2">{data.excerpt}</p>
+          <p className="line-clamp-4 mt-2">{data.excerpt}</p>
 
           {/* <br />
         <div>
@@ -64,4 +57,4 @@ function CardVertical({ data }: any) {
   );
 }
 
-export default CardVertical;
+export default CardHorical;

@@ -4,6 +4,18 @@ import clsx from 'clsx';
 import { axiosClient } from '@/src/configs/axiosClient';
 import styles from './PostDetail.module.scss';
 
+export async function generateMetadata({ params }: any) {
+  console.log('res', params);
+  const { slug } = params;
+  const res: any = await axiosClient.get(`/posts/slug/${slug}`);
+
+  const currentPost = res.posts[0];
+
+  return {
+    title: `${currentPost.title} | Ông Bà Tôi`,
+  };
+}
+
 async function PostPageDetail({ params }: any) {
   const { slug } = params;
   const res: any = await axiosClient.get(`/posts/slug/${slug}`);
