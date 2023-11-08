@@ -27,7 +27,7 @@ function SectionWelcome() {
   return (
     <div
       className={clsx({
-        'container mx-auto px-4 h-[90vw] md:h-[50vh]': true,
+        'container mx-auto px-4 h-[90vw] lg:h-[50vh]': true,
       })}
     >
       <Swiper

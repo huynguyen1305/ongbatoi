@@ -5,7 +5,6 @@ import { axiosClient } from '@/src/configs/axiosClient';
 import styles from './PostDetail.module.scss';
 
 export async function generateMetadata({ params }: any) {
-  console.log('res', params);
   const { slug } = params;
   const res: any = await axiosClient.get(`/posts/slug/${slug}`);
 
@@ -42,7 +41,7 @@ async function PostPageDetail({ params }: any) {
               textTransform: 'uppercase',
               fontFamily: 'ui-sans-serif',
             }}
-            className="text-2xl md:text-4xl"
+            className="text-2xl lg:text-4xl"
           >
             {currentPost.title}
           </h2>

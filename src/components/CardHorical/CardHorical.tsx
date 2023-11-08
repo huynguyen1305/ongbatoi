@@ -1,33 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
 
 function CardHorical({ data }: any) {
-  // const date = new Date(data.created_at);
   return (
     <Link href={`/tin-moi/${data.slug}`}>
-      <div>
-        <img
-          src={data.feature_image}
-          alt=""
-          style={{ objectFit: 'cover' }}
-          className="w-[100%] h-[100%]"
-        />
+      <div className="w-full h-full flex flex-col">
+        <div style={{ width: '100%', position: 'relative' }} className="h-[75vw] lg:h-[100%]">
+          <Image src={data.feature_image} alt="" fill style={{ objectFit: 'cover' }} />
+        </div>
 
         <div
           style={{
-            // padding: '1rem',
             marginTop: '1rem',
             display: 'flex',
             justifyContent: 'space-between',
             flexDirection: 'column',
           }}
         >
-          <Link href={`/tin-moi/${data.slug}`}>
-            <h3 style={{ fontSize: '1.25rem', fontWeight: '500', lineHeight: '1.25' }}>
-              {data.title}
-            </h3>
-          </Link>
+          <h3 style={{ fontSize: '1.25rem', fontWeight: '500', lineHeight: '1.25' }}>
+            {data.title}
+          </h3>
 
           <p className="line-clamp-4 mt-2">{data.excerpt}</p>
 

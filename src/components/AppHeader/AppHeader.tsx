@@ -70,19 +70,19 @@ export default function AppHeader() {
 
                 <h1
                   style={{
-                    fontSize: '1.5rem',
                     fontWeight: 'bold',
                     color: 'black',
                     textTransform: 'uppercase',
                     marginLeft: '0.5rem',
                   }}
+                  className="text-2xl"
                 >
                   ông bà tôi
                 </h1>
               </div>
             </Link>
 
-            <ul className="hidden md:flex">
+            <ul className="hidden lg:flex">
               {navbar.map((item) => (
                 <li
                   key={item.name}

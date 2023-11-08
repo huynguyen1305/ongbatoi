@@ -1,9 +1,25 @@
+'use client';
+
 import { Divider } from '@mantine/core';
 import { IconCircleArrowRight } from '@tabler/icons-react';
-import React, { Suspense } from 'react';
+import React, { useEffect } from 'react';
 import CardVertical from '@/src/components/CardVertical/CardVertical';
+import { axiosClient } from '@/src/configs/axiosClient';
 
-function SectionNewPost({ posts }: any) {
+function SectionNewPost() {
+  const [posts, setPosts] = React.useState<any>([]);
+  useEffect(() => {
+    async function fetchPost() {
+      const res: any = await axiosClient.get('/posts', {
+        params: {
+          limit: 10,
+        },
+      });
+      const { posts: resPost } = res;
+      setPosts(resPost);
+    }
+    fetchPost();
+  }, []);
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex justify-between items-center">
@@ -30,10 +46,8 @@ function SectionNewPost({ posts }: any) {
         </div>
       </div>
       <Divider my="xs" />
-      <div className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 gap-8">
-        <Suspense fallback={<div>Loading...</div>}>
-          {posts && posts.map((post: any) => <CardVertical key={post.id} data={post} />)}
-        </Suspense>
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8">
+        {posts ? posts.map((post: any) => <CardVertical key={post.id} data={post} />) : null}
       </div>
     </div>
   );

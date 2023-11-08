@@ -72,7 +72,7 @@ export default async function BaiVietPage() {
             </div>
           </div>
           <Divider my="xs" />
-          <div className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8">
             <Suspense fallback={<div>Loading...</div>}>
               {posts && posts.map((post: any) => <CardVertical key={post.id} data={post} />)}
             </Suspense>

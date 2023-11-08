@@ -3,8 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 function FeatureItem({ item }: any) {
-  console.log('item', item);
-
   return (
     <div className="w-full h-full" style={{ position: 'relative' }}>
       <Image
