@@ -1,8 +1,5 @@
-import { IconBrandInstagram } from '@tabler/icons-react';
-import { IconBrandFacebook } from '@tabler/icons-react';
-import { IconBrandTiktok } from '@tabler/icons-react';
-import { IconBrandTiktokFilled } from '@tabler/icons-react';
-import { IconBrandFacebookFilled } from '@tabler/icons-react';
+import { IconBrandInstagram, IconBrandTiktok, IconBrandFacebook } from '@tabler/icons-react';
+
 import React from 'react';
 
 function AppFooter() {
