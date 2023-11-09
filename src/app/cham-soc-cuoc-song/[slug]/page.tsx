@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import React from 'react';
-import PostListBLTT from '@/src/modules/SucKhoeAZ/PostListBLTT';
+
+import PostListCSTC from '@/src/modules/CarePage/PostListCSTC';
+import PostListTamT from '@/src/modules/CarePage/PostListCSTamT';
+import PostListTinhT from '@/src/modules/CarePage/PostListCSTinhT';
+import PostListLS from '@/src/modules/CarePage/PostListLoiSong';
 
 function SectionPage({ params }: any) {
   const diseaseList = [
@@ -8,33 +12,33 @@ function SectionPage({ params }: any) {
       id: 1,
       name: 'Chăm sóc thể chất',
       description: 'Chăm sóc thể chất',
-      slug: 'cham-soc-the-chat',
+      slug: '/cham-soc-cuoc-song/cham-soc-the-chat',
       image: 'https://picsum.photos/id/810/200',
     },
     {
       id: 2,
       name: 'Chăm sóc tâm thần',
       description: 'Chăm sóc tâm thần',
-      slug: 'cham-soc-tam-than',
+      slug: '/cham-soc-cuoc-song/cham-soc-tam-than',
       image: 'https://picsum.photos/id/857/200',
     },
     {
       id: 3,
       name: 'Chăm sóc tinh thần',
       description: 'Chăm sóc tinh thần',
-      slug: 'cham-soc-tinh-than',
+      slug: '/cham-soc-cuoc-song/cham-soc-tinh-than',
       image: 'https://picsum.photos/id/75/200',
     },
     {
       id: 4,
       name: 'Lối sống',
-      slug: 'loi-song',
       description: 'Lối sống',
+      slug: '/cham-soc-cuoc-song/loi-song',
       image: 'https://picsum.photos/id/537/200',
     },
   ];
   const { slug } = params;
-  const currentDisease = diseaseList.find((disease) => disease.slug === slug);
+  const currentDisease = diseaseList.find((disease) => disease.slug.includes(slug));
   if (!currentDisease) return <div>Not found</div>;
   return (
     <>
@@ -64,7 +68,10 @@ function SectionPage({ params }: any) {
       </section>
       <section>
         <div className="container mx-auto px-4 py-8">
-          <PostListBLTT />
+          {currentDisease?.slug === '/cham-soc-cuoc-song/cham-soc-the-chat' && <PostListCSTC />}
+          {currentDisease?.slug === '/cham-soc-cuoc-song/cham-soc-tam-than' && <PostListTamT />}
+          {currentDisease?.slug === '/cham-soc-cuoc-song/cham-soc-tinh-than' && <PostListTinhT />}
+          {currentDisease?.slug === '/cham-soc-cuoc-song/loi-song' && <PostListLS />}
         </div>
       </section>
     </>

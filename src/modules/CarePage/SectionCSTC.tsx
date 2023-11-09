@@ -7,13 +7,13 @@ import CardVertical from '@/src/components/CardVertical/CardVertical';
 import CardHorical from '@/src/components/CardHorical/CardHorical';
 import { axiosClient } from '@/src/configs/axiosClient';
 
-function SectionCSTT() {
+function SectionCSTC() {
   const [posts, setPosts] = React.useState<any>([]);
   useEffect(() => {
     async function fetchPost() {
       const res: any = await axiosClient.get('/posts', {
         params: {
-          limit: 10,
+          filter: 'tags:cham-soc-the-chat',
         },
       });
       const { posts: resPost } = res;
@@ -60,4 +60,4 @@ function SectionCSTT() {
   );
 }
 
-export default SectionCSTT;
+export default SectionCSTC;
