@@ -15,7 +15,7 @@ function SectionWelcome() {
     async function fetchPost() {
       const res: any = await axiosClient.get('/posts', {
         params: {
-          limit: 10,
+          filter: 'tags:banner',
         },
       });
       const { posts: resPost } = res;

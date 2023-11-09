@@ -23,7 +23,7 @@ function CardHorical({ data }: any) {
             {data.title}
           </h3>
 
-          <p className="line-clamp-4 mt-2">{data.excerpt}</p>
+          <p className="line-clamp-3 mt-2">{data.excerpt}</p>
 
           {/* <br />
         <div>

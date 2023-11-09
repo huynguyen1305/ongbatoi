@@ -1,9 +1,7 @@
 import { Suspense } from 'react';
-import { Divider } from '@mantine/core';
 
-import { IconCircleArrowRight } from '@tabler/icons-react';
 import Image from 'next/image';
-import CardVertical from '@/src/components/CardVertical/CardVertical';
+import Link from 'next/link';
 
 import { axiosClient } from '@/src/configs/axiosClient';
 import homeWelcomeImage from '@/src/assets/images/home-welcome.png';
@@ -40,41 +38,61 @@ export default async function BaiVietPage() {
               transform: 'translate(-50%, -50%)',
             }}
           >
-            <h3 style={{ fontSize: '5vw', fontWeight: '600' }} className="text-teal-300">
-              Bài Viết
+            <h3 style={{ fontSize: '5vw', fontWeight: '600' }} className="text-white">
+              Tin Mới
             </h3>
           </div>
         </div>
       </section>
       <section>
         <div className="container mx-auto px-4 py-8">
-          <div className="flex justify-between items-center">
-            <h3
-              style={{
-                fontSize: '1.5rem',
-                fontWeight: '500',
-                textTransform: 'uppercase',
-              }}
-            >
-              bài viết nổi bật
-            </h3>
-            <div
-              style={{
-                fontSize: '1rem',
-                fontWeight: '500',
-                textTransform: 'capitalize',
-                display: 'flex',
-                alignItems: 'center',
-              }}
-            >
-              <IconCircleArrowRight style={{ marginRight: '0.5rem' }} />
-              đọc thêm
-            </div>
-          </div>
-          <Divider my="xs" />
-          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 px-20">
             <Suspense fallback={<div>Loading...</div>}>
-              {posts && posts.map((post: any) => <CardVertical key={post.id} data={post} />)}
+              {posts &&
+                posts.map((post: any) => (
+                  <Link href={`/tin-moi/${post.slug}`}>
+                    <div
+                      style={{
+                        display: 'flex',
+                        borderRadius: '1rem',
+                        width: '100%',
+                        height: '100%',
+                      }}
+                    >
+                      <div style={{ width: '35%', height: '200px', position: 'relative' }}>
+                        <Image
+                          src={post.feature_image}
+                          alt=""
+                          fill
+                          style={{ objectFit: 'cover' }}
+                        />
+                      </div>
+
+                      <div
+                        style={{
+                          padding: '0 1rem',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          width: '65%',
+                        }}
+                      >
+                        <h3
+                          style={{ fontWeight: '500', lineHeight: '1.25' }}
+                          className="text-lg lg:text-xl"
+                        >
+                          {post.title}
+                        </h3>
+
+                        <p
+                          className="line-clamp-2 lg:line-clamp-2 mt-2"
+                          style={{ textAlign: 'justify' }}
+                        >
+                          {post.excerpt}
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
             </Suspense>
           </div>
         </div>

@@ -5,7 +5,10 @@ import React from 'react';
 function AppFooter() {
   return (
     <div className="bg-[#006752] text-white">
-      <div className="container mx-auto py-10 flex flex-wrap">
+      <div
+        className="container mx-auto py-10 flex flex-wrap"
+        style={{ backgroundColor: '#006752' }}
+      >
         <div className="w-full md:w-1/2 p-4">
           <h3
             style={{

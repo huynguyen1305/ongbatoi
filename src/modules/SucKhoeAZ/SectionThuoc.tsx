@@ -1,19 +1,19 @@
 'use client';
 
-import { Divider, Skeleton } from '@mantine/core';
-// import { IconCircleArrowRight } from '@tabler/icons-react';
+import { Skeleton } from '@mantine/core';
+
 import React, { useEffect } from 'react';
 import CardVertical from '@/src/components/CardVertical/CardVertical';
 import CardHorical from '@/src/components/CardHorical/CardHorical';
 import { axiosClient } from '@/src/configs/axiosClient';
 
-function SectionFeature() {
+function SectionThuoc() {
   const [posts, setPosts] = React.useState<any>([]);
   useEffect(() => {
     async function fetchPost() {
       const res: any = await axiosClient.get('/posts', {
         params: {
-          filter: 'tags:bai-viet-noi-bat',
+          filter: 'tags:thuoc',
         },
       });
       const { posts: resPost } = res;
@@ -22,32 +22,7 @@ function SectionFeature() {
     fetchPost();
   }, []);
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex justify-between items-center">
-        <h3
-          style={{
-            fontSize: '1.5rem',
-            fontWeight: '500',
-            textTransform: 'uppercase',
-          }}
-        >
-          bài viết nổi bật
-        </h3>
-        {/* <div
-          style={{
-            fontSize: '1rem',
-            fontWeight: '500',
-            textTransform: 'capitalize',
-            display: 'flex',
-            alignItems: 'center',
-          }}
-        >
-          <IconCircleArrowRight style={{ marginRight: '0.5rem' }} />
-          đọc thêm
-        </div> */}
-      </div>
-      <Divider my="xs" />
-
+    <div className=" py-4">
       {posts && posts.length > 0 ? (
         <div className="grid grid-cols-1 grid-rows-1 lg:grid-cols-2 lg:grid-rows-4 gap-4">
           <div className=" lg:row-span-4" style={{ width: '100%', height: '100%' }}>
@@ -81,4 +56,4 @@ function SectionFeature() {
   );
 }
 
-export default SectionFeature;
+export default SectionThuoc;

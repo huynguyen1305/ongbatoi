@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 function CardVertical({ data }: any) {
   // const date = new Date(data.created_at);
+  if (!data) return null;
   return (
     <Link href={`/tin-moi/${data.slug}`}>
       <div
@@ -31,7 +32,9 @@ function CardVertical({ data }: any) {
             {data.title}
           </h3>
 
-          <p className="line-clamp-2 lg:line-clamp-3 mt-2">{data.excerpt}</p>
+          <p className="line-clamp-2 lg:line-clamp-2 mt-2" style={{ textAlign: 'justify' }}>
+            {data.excerpt}
+          </p>
         </div>
       </div>
     </Link>

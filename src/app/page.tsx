@@ -26,8 +26,6 @@ export default async function HomePage() {
       <section>
         <SectionNewPost />
       </section>
-      <br />
-      <br />
     </>
   );
 }
