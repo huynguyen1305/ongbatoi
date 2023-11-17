@@ -24,6 +24,14 @@ module.exports = withBundleAnalyzer({
         protocol: 'https',
         hostname: 'ong-ba-toi.ghost.io',
       },
+      {
+        protocol: 'https',
+        hostname: 'static.ghost.org',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ongbatoi2.ghost.io',
+      },
     ],
   },
 });

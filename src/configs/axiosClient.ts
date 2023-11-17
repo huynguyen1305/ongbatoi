@@ -8,7 +8,7 @@ import type {
 
 import axios from 'axios';
 
-const baseUrl = 'https://ong-ba-toi.ghost.io/ghost/api/content';
+const baseUrl = 'https://ongbatoi2.ghost.io/ghost/api/content';
 
 export const defaultConfigAxios: CreateAxiosDefaults = {
   timeout: 30000,
@@ -27,7 +27,7 @@ export const onRequestSuccess = async (config: InternalAxiosRequestConfig) => {
   // const accessToken = localStorage.getItem('accessToken');
   // config.headers = config.headers ?? {};
   // if (accessToken) config.headers.Authorization = `Bearer ${accessToken}`;
-  config.params = { ...config.params, key: '30d5e59823b83d761ab65c704a', include: 'tags' };
+  config.params = { ...config.params, key: '9bc14f97b360251d6b64d68575', include: 'tags' };
   return config;
 };
 
