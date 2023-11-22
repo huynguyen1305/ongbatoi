@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: any }) {
         <MantineProvider theme={theme}>
           <div className="appLayoutWrapper">
             <AppHeader />
-            <div className="mt-[165px] flex-auto">{children}</div>
+            <div className="mt-[155px] flex-auto">{children}</div>
             <AppFooter />
           </div>
         </MantineProvider>

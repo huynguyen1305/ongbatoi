@@ -1,7 +1,5 @@
 'use client';
 
-import { Skeleton } from '@mantine/core';
-
 import React, { useEffect } from 'react';
 // import CardVertical from '@/src/components/CardVertical/CardVertical';
 import CardHorical from '@/src/components/CardHorical/CardHorical';
@@ -24,23 +22,13 @@ function SectionLS() {
   return (
     <div className="py-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-x-4 gap-y-8">
-        {posts && posts.length > 0 ? (
-          posts?.splice(0, 6).map((post: any) => (
-            <div className="h-[400px]">
-              <CardHorical data={post} />
-            </div>
-          ))
-        ) : (
-          <>
-            <Skeleton height={120} />
-            <br />
-            <Skeleton height={120} />
-            <br />
-            <Skeleton height={120} />
-            <br />
-            <Skeleton height={120} />
-          </>
-        )}
+        {posts && posts.length > 0
+          ? posts?.splice(0, 6).map((post: any) => (
+              <div className="h-[400px]">
+                <CardHorical data={post} />
+              </div>
+            ))
+          : null}
       </div>
     </div>
   );

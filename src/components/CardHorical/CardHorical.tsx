@@ -7,7 +7,7 @@ function CardHorical({ data }: any) {
   return (
     <Link href={`/tin-moi/${data.slug}`}>
       <div className="w-full h-full flex flex-col">
-        <div style={{ width: '100%', position: 'relative' }} className="h-[75vw] lg:h-[100%]">
+        <div style={{ width: '100%', position: 'relative' }} className="h-[345px]">
           <Image src={data.feature_image} alt="" fill style={{ objectFit: 'cover' }} />
         </div>
 

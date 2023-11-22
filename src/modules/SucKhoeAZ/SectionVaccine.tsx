@@ -1,10 +1,8 @@
 'use client';
 
-import { Skeleton } from '@mantine/core';
-
 import React, { useEffect } from 'react';
-import CardVertical from '@/src/components/CardVertical/CardVertical';
-import CardHorical from '@/src/components/CardHorical/CardHorical';
+import Link from 'next/link';
+import Image from 'next/image';
 import { axiosClient } from '@/src/configs/axiosClient';
 
 function SectionVaccine() {
@@ -22,36 +20,46 @@ function SectionVaccine() {
     fetchPost();
   }, []);
   return (
-    <div className=" py-4">
-      {posts && posts.length > 0 ? (
-        <div className="grid grid-cols-1 grid-rows-1 lg:grid-cols-2 lg:grid-rows-4 gap-4">
-          <div className=" lg:row-span-4" style={{ width: '100%', height: '100%' }}>
-            <CardHorical data={posts[0]} />
-          </div>
-          <div className="">
-            <CardVertical data={posts[1]} />
-          </div>
-          <div className="lg:col-start-2">
-            <CardVertical data={posts[2]} />
-          </div>
-          <div className="lg:col-start-2 lg:row-start-3">
-            <CardVertical data={posts[3]} />
-          </div>
-          <div className="lg:col-start-2 lg:row-start-4">
-            <CardVertical data={posts[4]} />
-          </div>
-        </div>
-      ) : (
-        <>
-          <Skeleton height={120} />
-          <br />
-          <Skeleton height={120} />
-          <br />
-          <Skeleton height={120} />
-          <br />
-          <Skeleton height={120} />
-        </>
-      )}
+    <div className=" py-2">
+      {posts && posts.length > 0
+        ? posts.splice(0, 4).map((post: any) => (
+            <Link href={`/tin-moi/${post.slug}`} key={post.id}>
+              <div
+                style={{
+                  display: 'flex',
+                  borderRadius: '1rem',
+                  width: '100%',
+                  height: '100%',
+                }}
+              >
+                <div style={{ width: '35%', height: '200px', position: 'relative' }}>
+                  <Image src={post.feature_image} alt="" fill style={{ objectFit: 'cover' }} />
+                </div>
+
+                <div
+                  style={{
+                    padding: '0 1rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    width: '65%',
+                  }}
+                >
+                  <h3 style={{ lineHeight: '1.25' }} className="text-lg lg:text-xl title-card">
+                    {post.title}
+                  </h3>
+
+                  <p
+                    className="line-clamp-2 lg:line-clamp-2 mt-2 text-card"
+                    style={{ textAlign: 'justify' }}
+                  >
+                    {post.excerpt}
+                  </p>
+                </div>
+              </div>
+              <br />
+            </Link>
+          ))
+        : null}
     </div>
   );
 }

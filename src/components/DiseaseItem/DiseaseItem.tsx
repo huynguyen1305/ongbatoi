@@ -56,12 +56,12 @@ function DiseaseItem(props: any) {
                           />
                         </div>
                         <h3
-                          style={{ fontWeight: '500', lineHeight: '1.25', marginTop: '0.5rem' }}
-                          className="text-lg "
+                          style={{ lineHeight: '1.25', marginTop: '0.5rem' }}
+                          className="text-lg title-card"
                         >
                           {post.title}
                         </h3>
-                        <p className="line-clamp-2 mt-2">{post.excerpt}</p>
+                        <p className="line-clamp-2 mt-2 text-card">{post.excerpt}</p>
                       </div>
                     </Link>
                   );
@@ -75,7 +75,7 @@ function DiseaseItem(props: any) {
                       }}
                     >
                       <h3
-                        style={{ fontWeight: '500', lineHeight: '1.55', margin: '0.5rem 0' }}
+                        style={{ lineHeight: '1.55', margin: '0.5rem 0', fontWeight: '700' }}
                         className="text-lg "
                       >
                         {post.title}

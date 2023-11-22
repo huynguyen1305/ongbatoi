@@ -75,7 +75,7 @@ export default function AppHeader() {
   return (
     <>
       <div
-        className="w-full fixed top-0 z-10"
+        className="w-full fixed top-0 z-10 bg-white"
         style={{
           backgroundColor: '#FFF',
           boxShadow: '0 8px 8px 0 rgba(0, 0, 0, 0.2)',
@@ -83,16 +83,16 @@ export default function AppHeader() {
         }}
       >
         <div className="container mx-auto px-4 bg-white">
-          <div className="flex justify-between items-center ">
+          <div className="flex justify-between items-center my-2 bg-white">
             <Link href="/">
-              <Image src={logo} alt="logo" width={234} height={120} className="py-4" />
+              <Image src={logo} alt="logo" width={234} height={120} />
             </Link>
-            <div className="p-2" style={{ border: '1px solid #006752', borderRadius: '2rem' }}>
+            <div className="mx-2" style={{ border: '1px solid #006752', borderRadius: '2rem' }}>
               <div className="flex rounded-full px-2 w-full max-w-[600px]">
                 <input
                   type="text"
                   className="w-full flex bg-transparent pl-1 pr-2 text-black outline-0"
-                  placeholder="Search posts ..."
+                  placeholder="Tìm kiếm ..."
                 />
 
                 <div style={{ cursor: 'pointer' }}>
@@ -143,6 +143,9 @@ export default function AppHeader() {
                         color: pathname === item.href ? '#006752' : 'white',
                       }}
                       size={26}
+                      onClick={() => {
+                        setSelectNav((prev: any) => (prev !== null ? null : item));
+                      }}
                     />
                   </div>
                 </div>
@@ -179,10 +182,11 @@ export default function AppHeader() {
                 selectNav && selectNav?.children.length > 0
                   ? 'translateY(100%) translateX(-50%)'
                   : 'translateY(0) translateX(-50%)',
-              zIndex: -1,
+              zIndex: -2,
+              opacity: selectNav && selectNav?.children.length > 0 ? 1 : 0,
               boxShadow:
                 selectNav && selectNav?.children.length > 0
-                  ? '0 8px 8px 0 rgba(0, 0, 0, 0.3)'
+                  ? '0 4px 4px 0 rgba(0, 0, 0, 0.3)'
                   : 'none',
               transition: 'all 0.3s ease-in-out',
             }}

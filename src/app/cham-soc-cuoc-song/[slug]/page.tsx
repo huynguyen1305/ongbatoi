@@ -68,10 +68,10 @@ function SectionPage({ params }: any) {
       </section>
       <section>
         <div className="container mx-auto px-4 py-8">
-          {currentDisease?.slug === '/cham-soc-cuoc-song/cham-soc-the-chat' && <PostListCSTC />}
-          {currentDisease?.slug === '/cham-soc-cuoc-song/cham-soc-tam-than' && <PostListTamT />}
-          {currentDisease?.slug === '/cham-soc-cuoc-song/cham-soc-tinh-than' && <PostListTinhT />}
-          {currentDisease?.slug === '/cham-soc-cuoc-song/loi-song' && <PostListLS />}
+          <PostListCSTC />
+          <PostListTamT />
+          <PostListTinhT />
+          <PostListLS />
         </div>
       </section>
     </>

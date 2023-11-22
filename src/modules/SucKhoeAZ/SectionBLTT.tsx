@@ -21,25 +21,40 @@ function SectionBLTT() {
     }
     fetchPost();
   }, []);
+
   return (
     <div className=" py-4">
       {posts && posts.length > 0 ? (
         <div className="grid grid-cols-1 grid-rows-1 lg:grid-cols-2 lg:grid-rows-4 gap-4">
-          <div className=" lg:row-span-4" style={{ width: '100%', height: '100%' }}>
-            <CardHorical data={posts[0]} />
-          </div>
-          <div className="">
-            <CardVertical data={posts[1]} />
-          </div>
-          <div className="lg:col-start-2">
-            <CardVertical data={posts[2]} />
-          </div>
-          <div className="lg:col-start-2 lg:row-start-3">
-            <CardVertical data={posts[3]} />
-          </div>
-          <div className="lg:col-start-2 lg:row-start-4">
-            <CardVertical data={posts[4]} />
-          </div>
+          {posts[0] && (
+            <div
+              key={posts[0].id}
+              className=" lg:row-span-4"
+              style={{ width: '100%', height: '100%' }}
+            >
+              <CardHorical data={posts[0]} />
+            </div>
+          )}
+          {posts[1] && (
+            <div key={posts[1].id} className="">
+              <CardVertical data={posts[1]} />
+            </div>
+          )}
+          {posts[2] && (
+            <div key={posts[2].id} className="lg:col-start-2">
+              <CardVertical data={posts[2]} />
+            </div>
+          )}
+          {posts[3] && (
+            <div key={posts[3].id} className="lg:col-start-2 lg:row-start-3">
+              <CardVertical data={posts[3]} />
+            </div>
+          )}
+          {posts[4] && (
+            <div key={posts[4].id} className="lg:col-start-2 lg:row-start-4">
+              <CardVertical data={posts[4]} />
+            </div>
+          )}
         </div>
       ) : (
         <>

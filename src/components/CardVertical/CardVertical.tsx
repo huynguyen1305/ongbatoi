@@ -16,7 +16,7 @@ function CardVertical({ data }: any) {
           height: '100%',
         }}
       >
-        <div style={{ width: '35%', height: '100%', position: 'relative' }}>
+        <div style={{ width: '35%', height: '123px', position: 'relative' }}>
           <Image src={data.feature_image} alt="" fill style={{ objectFit: 'cover' }} />
         </div>
 
