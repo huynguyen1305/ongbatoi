@@ -63,9 +63,13 @@
     //     transition: all 0.3s ease-in-out;
     // }
     &:hover {
-        color: black;
+        a {
+            color: #006752 !important;
+        };
+        svg{
+            stroke: #006752 !important;
+        };
         background-color: white;
-        color: #006752;
         border-top: 4px solid #006752; 
     }
 

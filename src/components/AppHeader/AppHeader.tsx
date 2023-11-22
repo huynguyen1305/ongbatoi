@@ -7,7 +7,7 @@ import { clsx } from 'clsx';
 import { usePathname } from 'next/navigation';
 
 import { useState } from 'react';
-import { IconChevronRight, IconSearch } from '@tabler/icons-react';
+import { IconChevronRight, IconSearch, IconCircleChevronDown } from '@tabler/icons-react';
 import logo from '@/src/assets/images/logo-ngang.png';
 import styles from './AppHeader.module.scss';
 
@@ -120,7 +120,7 @@ export default function AppHeader() {
                   <div
                     className={clsx(
                       styles.navItem,
-                      'py-4 px-8 text-white',
+                      'py-4 px-8 text-white flex items-center',
                       pathname === item.href &&
                         'font-bold bg-white border-t-solid border-t-4 border-t-[#006752] text-[#006752]'
                     )}
@@ -135,6 +135,15 @@ export default function AppHeader() {
                     >
                       {item.name}
                     </Link>
+                    <IconCircleChevronDown
+                      className={clsx('ml-4 mt-1', {
+                        hidden: !item.children.length,
+                      })}
+                      style={{
+                        color: pathname === item.href ? '#006752' : 'white',
+                      }}
+                      size={26}
+                    />
                   </div>
                 </div>
               ))}
