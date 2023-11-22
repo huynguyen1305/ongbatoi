@@ -19,4 +19,12 @@
     & p {
         text-align: justify;
     }
+    & ul, ol {
+        margin-left: 1.5rem;
+        text-align: justify;
+        list-style-type: disc;
+    }
+    & li {
+        margin-bottom: 0.5rem;
+    }
 }
