@@ -42,15 +42,15 @@ export default function AppHeader() {
       href: '/cham-soc-cuoc-song',
       children: [
         {
-          name: 'Chăm cóc thể chất',
+          name: 'Chăm sóc thể chất',
           href: '/cham-soc-cuoc-song/cham-soc-the-chat',
         },
         {
-          name: 'Chăm cóc tâm thần',
+          name: 'Chăm sóc tâm thần',
           href: '/cham-soc-cuoc-song/cham-soc-tam-than',
         },
         {
-          name: 'Chăm cóc tinh thần',
+          name: 'Chăm sóc tinh thần',
           href: '/cham-soc-cuoc-song/cham-soc-tinh-than',
         },
         {
@@ -193,7 +193,7 @@ export default function AppHeader() {
             <div className="w-full h-full px-8 py-4">
               <div className="flex flex-col text-xl font-medium">
                 {selectNav?.children.map((item: any) => (
-                  <div className="flex my-4 space-x-2 items-center" key={item.name}>
+                  <div className="flex my-4 space-x-2 items-center capitalize" key={item.name}>
                     <IconChevronRight color="#006752" stroke={3} />
                     <Link href={item.href}>{item.name}</Link>
                   </div>

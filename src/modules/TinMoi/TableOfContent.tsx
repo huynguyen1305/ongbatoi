@@ -29,13 +29,14 @@ function TableOfContent({ currentPost }: any) {
   return (
     <div>
       <strong>{currentPost.title}</strong>
-      <Divider className="my-3" />
+      <Divider className="my-3" color="transparent" />
       {nestedHeadings
         ? nestedHeadings.map((nestedHeading: any) => (
             <small key={nestedHeading.id} style={{ display: 'block', marginBottom: '8px' }}>
               <a href={`#${nestedHeading.id}`} title={nestedHeading.id}>
                 {nestedHeading.title}
               </a>
+              <Divider className="w-1/5" my={8} />
             </small>
           ))
         : null}

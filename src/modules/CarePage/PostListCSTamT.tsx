@@ -44,14 +44,14 @@ function PostListTamT() {
                     width: '65%',
                   }}
                 >
-                  <h3
-                    style={{ fontWeight: '500', lineHeight: '1.25' }}
-                    className="text-lg lg:text-xl"
-                  >
+                  <h3 style={{ lineHeight: '1.25' }} className="text-lg lg:text-xl title-card">
                     {post.title}
                   </h3>
 
-                  <p className="line-clamp-2 lg:line-clamp-2 mt-2" style={{ textAlign: 'justify' }}>
+                  <p
+                    className="line-clamp-2 lg:line-clamp-2 mt-2 text-card"
+                    style={{ textAlign: 'justify' }}
+                  >
                     {post.excerpt}
                   </p>
                 </div>

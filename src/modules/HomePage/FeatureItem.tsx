@@ -36,10 +36,13 @@ function FeatureItem({ item }: any) {
           className="m-6"
         >
           <Link href={`/tin-moi/${item.slug}`}>
-            <h3 style={{ fontSize: '1.5rem', fontWeight: '500', lineHeight: '1.25' }}>
+            <h3 style={{ fontSize: '1.75rem', fontWeight: '700', lineHeight: '1.25' }}>
               {item.title}
             </h3>
-            <p className="line-clamp-3 mt-2" style={{ textAlign: 'justify' }}>
+            <p
+              className="line-clamp-3 mt-2"
+              style={{ textAlign: 'justify', fontSize: '0.9rem', opacity: '0.8' }}
+            >
               {item.excerpt}
             </p>
           </Link>

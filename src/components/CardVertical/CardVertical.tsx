@@ -28,11 +28,17 @@ function CardVertical({ data }: any) {
             width: '65%',
           }}
         >
-          <h3 style={{ fontWeight: '500', lineHeight: '1.25' }} className="text-lg lg:text-xl">
+          <h3
+            style={{ fontWeight: '700', lineHeight: '1.25', fontSize: '1.5rem' }}
+            className="text-lg lg:text-xl"
+          >
             {data.title}
           </h3>
 
-          <p className="line-clamp-2 lg:line-clamp-2 mt-2" style={{ textAlign: 'justify' }}>
+          <p
+            className="line-clamp-2 lg:line-clamp-2 mt-2"
+            style={{ textAlign: 'justify', fontSize: '0.9rem', color: 'grey' }}
+          >
             {data.excerpt}
           </p>
         </div>

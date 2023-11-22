@@ -91,8 +91,8 @@ function ChamSocPage() {
                 <div className="flex justify-between items-center">
                   <h3
                     style={{
-                      fontSize: '1.5rem',
-                      fontWeight: '500',
+                      fontSize: '1.75rem',
+                      fontWeight: '700',
                       textTransform: 'uppercase',
                     }}
                   >
@@ -112,7 +112,8 @@ function ChamSocPage() {
                   </div>
                 </div>
               </Link>
-              <Divider my="xs" />
+              <Divider className="mt-4" />
+
               {item.slug === '/cham-soc-cuoc-song/cham-soc-the-chat' ? <SectionCSTC /> : null}
               {item.slug === '/cham-soc-cuoc-song/cham-soc-tam-than' ? <SectionCSTamT /> : null}
               {item.slug === '/cham-soc-cuoc-song/cham-soc-tinh-than' ? <SectionCSTinhT /> : null}

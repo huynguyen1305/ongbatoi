@@ -19,11 +19,13 @@ function CardHorical({ data }: any) {
             flexDirection: 'column',
           }}
         >
-          <h3 style={{ fontSize: '1.25rem', fontWeight: '500', lineHeight: '1.25' }}>
+          <h3 style={{ fontSize: '1.5rem', fontWeight: '700', lineHeight: '1.55' }}>
             {data.title}
           </h3>
 
-          <p className="line-clamp-3 mt-2">{data.excerpt}</p>
+          <p className="line-clamp-3 mt-2" style={{ fontSize: '0.9rem', color: 'grey' }}>
+            {data.excerpt}
+          </p>
 
           {/* <br />
         <div>
