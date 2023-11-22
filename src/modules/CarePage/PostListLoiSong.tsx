@@ -23,7 +23,7 @@ function PostListLS() {
     <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 px-20">
       {posts && posts.length > 0
         ? posts.map((post: any) => (
-            <Link href={`/tin-moi/${post.slug}`}>
+            <Link href={`/tin-moi/${post.slug}`} key={post.id}>
               <div
                 style={{
                   display: 'flex',

@@ -50,7 +50,7 @@ export default async function BaiVietPage() {
             <Suspense fallback={<div>Loading...</div>}>
               {posts &&
                 posts.map((post: any) => (
-                  <Link href={`/tin-moi/${post.slug}`}>
+                  <Link href={`/tin-moi/${post.slug}`} key={post.id}>
                     <div
                       style={{
                         display: 'flex',
